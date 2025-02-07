@@ -46,7 +46,7 @@ class Vgg(nn.Module):
         #        conv = rearrange(conv, 'b d h w -> b d (w h)')
         conv = conv.transpose(-1, -2)
         conv = conv.flatten(2)
-        conv = conv.permute(-1, 0, 1)
+        conv = conv.permute(2, 0, 1)
         return conv
 
 
